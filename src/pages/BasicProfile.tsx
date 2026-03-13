@@ -83,7 +83,7 @@ const BasicProfile = () => {
                 <div className="select-group">
                   <select defaultValue="August"><option>August</option></select>
                   <select defaultValue="1"><option>1</option></select>
-                  <select defaultValue="2028"><option>2028</option></select>
+                  <select defaultValue="2027"><option>2027</option></select>
                 </div>
               </div>
 
@@ -123,8 +123,8 @@ const BasicProfile = () => {
               <div className="form-group inline-group mt-3">
                 <label>Birth Date: (G.C) <span className="req"> *(set this carefully!)</span></label>
                 <div className="select-group">
-                  <select defaultValue="May"><option>May</option></select>
-                  <select defaultValue="18"><option>18</option></select>
+                  <select defaultValue="April"><option>April</option></select>
+                  <select defaultValue="7"><option>7</option></select>
                   <select defaultValue="2003"><option>2003</option></select>
                 </div>
               </div>

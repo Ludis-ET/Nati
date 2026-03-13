@@ -129,7 +129,7 @@ const AcademicProfile = () => {
                   <div className="info-row text-sm">Last Password Change: {mockUser.lastPasswordChange}</div>
                   <div className="info-row alternate text-sm">Failed Logins: ---</div>
                   <div className="info-row text-sm">Folder Number: {mockUser.folderNumber}</div>
-                  <div className="info-row alternate text-sm">Phone Number: {mockUser.phoneMobile.replace('+251', '0')}</div>
+                  <div className="info-row alternate text-sm">Phone Number: {mockUser.phoneMobile}</div>
                   <div className="info-row text-sm">Email: {mockUser.email}</div>
                 </div>
               </div>

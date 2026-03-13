@@ -1,15 +1,15 @@
 export const mockUser = {
   id: 'UUR00884/16',
-  firstNameEng: 'Biruk',
-  middleNameEng: 'Kahsay',
-  lastNameEng: 'Tesfay',
-  firstNameAmh: 'ብሩክ',
-  middleNameAmh: 'ካህሳይ',
-  lastNameAmh: 'ተስፋይ',
+  firstNameEng: 'Natnael',
+  middleNameEng: 'Tesfaye',
+  lastNameEng: 'Ahmed',
+  firstNameAmh: 'ናትናኤል',
+  middleNameAmh: 'ተስፋዬ',
+  lastNameAmh: 'አህመድ',
   sex: 'Male',
-  birthDate: 'May 18, 2003',
-  email: 'birukkahsay05@gmail.com',
-  phoneMobile: '+251098210902',
+  birthDate: 'April 7, 2003',
+  email: 'Natiskat45@gmail.com',
+  phoneMobile: '+251976763993',
   program: 'Undergraduate (Degree)',
   programType: 'Regular',
   campus: 'Al-Amoudi-Gerji Campus',
@@ -17,12 +17,12 @@ export const mockUser = {
   department: 'Architecture and Urban Planning',
   admissionYear: '2016',
   admissionDate: 'Sep 1, 2016',
-  estimatedGradDate: 'August 1 2028',
+  estimatedGradDate: 'August 1 2027',
   lastLogin: '1 minute ago',
   lastPasswordChange: '1 month ago',
   folderNumber: '00108',
   username: 'UUR00884/16',
-  password: 'password123', // For mock login purposes
+  password: 'Natiuu7676', // For mock login purposes
 };
 
 export const mockSchedule = [
@@ -42,7 +42,7 @@ export const mockSchedule = [
 export const mockAdmittedStudents = [
   {
     no: 1,
-    fullName: 'Biruk Kahsay Tesfay',
+    fullName: 'Natnael Tesfaye Ahmed',
     sex: 'Male',
     studentNumber: 'UUR00884/16',
     college: 'FETCS',

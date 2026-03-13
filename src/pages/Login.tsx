@@ -24,7 +24,7 @@ import "./Login.css";
 
 const Login = () => {
   const [username, setUsername] = useState("UUR00884/16");
-  const [password, setPassword] = useState("password123");
+  const [password, setPassword] = useState("Natiuu7676");
   const [activeSlide, setActiveSlide] = useState(0);
   const [showInvalid, setShowInvalid] = useState(false);
   const { login } = useAuth();

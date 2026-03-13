@@ -52,6 +52,8 @@ const Grades = () => {
     };
   }, [selectedReport]);
 
+  const isPendingReport = selectedReport?.pending ?? false;
+
   return (
     <div className="grades-page card">
       <h2 className="grades-title">Student Examination Grade Report</h2>
@@ -180,14 +182,14 @@ const Grades = () => {
                       <td>{course.courseTitle}</td>
                       <td>{course.creditHour}</td>
                       <td>{course.grade}</td>
-                      <td>{course.gradePoint}</td>
+                      <td>{course.grade === "-" ? "-" : course.gradePoint}</td>
                     </tr>
                   ))}
                   <tr className="result-total-row">
                     <td colSpan={3}>TOTAL</td>
                     <td>{totals.totalCredit}</td>
                     <td></td>
-                    <td>{totals.totalPoint}</td>
+                    <td>{isPendingReport ? "-" : totals.totalPoint}</td>
                   </tr>
                 </tbody>
               </table>
@@ -203,23 +205,27 @@ const Grades = () => {
                     </tr>
                     <tr>
                       <td>Credit Hour Taken:</td>
-                      <td>---</td>
+                      <td>{selectedReport.previousCreditHour ?? "---"}</td>
                     </tr>
                     <tr>
                       <td>Grade Point Earned:</td>
-                      <td>---</td>
+                      <td>{selectedReport.previousGradePoint ?? "---"}</td>
                     </tr>
                     <tr>
                       <td>SGPA:</td>
-                      <td>---</td>
+                      <td>
+                        {selectedReport.previousSgpa?.toFixed(2) ?? "---"}
+                      </td>
                     </tr>
                     <tr>
                       <td>CGPA:</td>
-                      <td>---</td>
+                      <td>
+                        {selectedReport.cumulativeGpa?.toFixed(2) ?? "---"}
+                      </td>
                     </tr>
                     <tr>
                       <td>Status:</td>
-                      <td>---</td>
+                      <td>{selectedReport.academicStatus ?? "---"}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -237,19 +243,21 @@ const Grades = () => {
                     </tr>
                     <tr>
                       <td>Grade Point Earned:</td>
-                      <td>{totals.totalPoint}</td>
+                      <td>{isPendingReport ? "-" : totals.totalPoint}</td>
                     </tr>
                     <tr>
                       <td>SGPA:</td>
-                      <td>{totals.sgpa.toFixed(2)}</td>
+                      <td>{isPendingReport ? "-" : totals.sgpa.toFixed(2)}</td>
                     </tr>
                     <tr>
                       <td>CGPA:</td>
-                      <td>---</td>
+                      <td>
+                        {selectedReport.cumulativeGpa?.toFixed(2) ?? "---"}
+                      </td>
                     </tr>
                     <tr>
                       <td>Status:</td>
-                      <td>---</td>
+                      <td>{selectedReport.academicStatus ?? "---"}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -263,11 +271,17 @@ const Grades = () => {
                     </tr>
                     <tr>
                       <td>Total Credit Hour Taken:</td>
-                      <td>{totals.totalCredit}</td>
+                      <td>
+                        {selectedReport.cumulativeCreditHour ??
+                          totals.totalCredit}
+                      </td>
                     </tr>
                     <tr>
                       <td>Total Grade Point Earned:</td>
-                      <td>{totals.totalPoint}</td>
+                      <td>
+                        {selectedReport.cumulativeGradePoint ??
+                          totals.totalPoint}
+                      </td>
                     </tr>
                   </tbody>
                 </table>

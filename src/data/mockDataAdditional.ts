@@ -1,153 +1,100 @@
-export const mockCourseRegistrations = [
-  {
-    sNo: 1,
-    id: "UUR00884/16",
-    name: "Biruk Kahsay Tesfay",
-    department: "Architecture and Urban Planning",
-    program: "Undergraduate (Degree)",
-    programType: "Regular",
-    year: "3rd",
-    academicYear: "2018",
-    semester: "1",
-    course: "Arch-3242-Theory and Design of Structures III",
-    paymentSlip: "Payment Invoice",
-  },
-  {
-    sNo: 3,
-    id: "UUR00884/16",
-    name: "Biruk Kahsay Tesfay",
-    department: "Architecture and Urban Planning",
-    program: "Undergraduate (Degree)",
-    programType: "Regular",
-    year: "3rd",
-    academicYear: "2018",
-    semester: "1",
-    course: "GlTr-1012-Global Trends",
-    paymentSlip: "Payment Invoice",
-  },
-  {
-    sNo: 5,
-    id: "UUR00884/16",
-    name: "Biruk Kahsay Tesfay",
-    department: "Architecture and Urban Planning",
-    program: "Undergraduate (Degree)",
-    programType: "Regular",
-    year: "3rd",
-    academicYear: "2018",
-    semester: "1",
-    course: "Arch-3081-Building Materials and Construction III",
-    paymentSlip: "Payment Invoice",
-  },
-  {
-    sNo: 7,
-    id: "UUR00884/16",
-    name: "Biruk Kahsay Tesfay",
-    department: "Architecture and Urban Planning",
-    program: "Undergraduate (Degree)",
-    programType: "Regular",
-    year: "3rd",
-    academicYear: "2018",
-    semester: "1",
-    course: "Arch-3201-Communication Skills III",
-    paymentSlip: "Payment Invoice",
-  },
-  {
-    sNo: 9,
-    id: "UUR00884/16",
-    name: "Biruk Kahsay Tesfay",
-    department: "Architecture and Urban Planning",
-    program: "Undergraduate (Degree)",
-    programType: "Regular",
-    year: "3rd",
-    academicYear: "2018",
-    semester: "1",
-    course: "Arch-3111-History of Ethiopian Architecture",
-    paymentSlip: "Payment Invoice",
-  },
-  {
-    sNo: 11,
-    id: "UUR00884/16",
-    name: "Biruk Kahsay Tesfay",
-    department: "Architecture and Urban Planning",
-    program: "Undergraduate (Degree)",
-    programType: "Regular",
-    year: "3rd",
-    academicYear: "2018",
-    semester: "1",
-    course: "Arch-3021-Architectural Design I",
-    paymentSlip: "Payment Invoice",
-  },
-  {
-    sNo: 13,
-    id: "UUR00884/16",
-    name: "Biruk Kahsay Tesfay",
-    department: "Architecture and Urban Planning",
-    program: "Undergraduate (Degree)",
-    programType: "Regular",
-    year: "3rd",
-    academicYear: "2018",
-    semester: "1",
-    course: "Arch-2132-Architectural Science I (Light)",
-    paymentSlip: "Payment Invoice",
-  },
-  {
-    sNo: 15,
-    id: "UUR00884/16",
-    name: "Biruk Kahsay Tesfay",
-    department: "Architecture and Urban Planning",
-    program: "Undergraduate (Degree)",
-    programType: "Regular",
-    year: "2nd",
-    academicYear: "2017",
-    semester: "2",
-    course: "Arch-2101-Architectural Graphics",
-    paymentSlip: "Payment Invoice",
-  },
-  {
-    sNo: 17,
-    id: "UUR00884/16",
-    name: "Biruk Kahsay Tesfay",
-    department: "Architecture and Urban Planning",
-    program: "Undergraduate (Degree)",
-    programType: "Regular",
-    year: "2nd",
-    academicYear: "2017",
-    semester: "2",
-    course: "Arch-2203-Computer Aided Design",
-    paymentSlip: "Payment Invoice",
-  },
-  {
-    sNo: 19,
-    id: "UUR00884/16",
-    name: "Biruk Kahsay Tesfay",
-    department: "Architecture and Urban Planning",
-    program: "Undergraduate (Degree)",
-    programType: "Regular",
-    year: "3rd",
-    academicYear: "2018",
-    semester: "2",
-    course: "Arch-3301-Architectural Technology",
-    paymentSlip: "Payment Invoice",
-  },
-  {
-    sNo: 21,
-    id: "UUR00884/16",
-    name: "Biruk Kahsay Tesfay",
-    department: "Architecture and Urban Planning",
-    program: "Undergraduate (Degree)",
-    programType: "Regular",
-    year: "3rd",
-    academicYear: "2018",
-    semester: "2",
-    course: "Arch-3312-Urban Design Studio",
-    paymentSlip: "Payment Invoice",
-  },
+import {
+  managementCurriculumCourses,
+  type ManagementCourse,
+} from "./managementCourses";
+
+type GradeLetter = "A-" | "B+" | "B" | "C+";
+type GradeValue = GradeLetter | "-";
+
+const STUDENT_PROFILE = {
+  fullName: "Natnael Tesfaye Ahmed",
+  id: "UUR00884/16",
+  department: "Management",
+  program: "Undergraduate (Degree)",
+  programType: "Distance",
+  schoolCenter: "Faculty of Distance Education",
+};
+
+const gradePointsByLetter: Record<GradeLetter, number> = {
+  "A-": 3.75,
+  "B+": 3.5,
+  B: 3,
+  "C+": 2.5,
+};
+
+const gradePattern: GradeLetter[] = [
+  "B+",
+  "B",
+  "B+",
+  "B",
+  "A-",
+  "B",
+  "B+",
+  "C+",
 ];
+
+const ordinalByLevel = ["1st", "2nd", "3rd", "4th"];
+const studentYearLabelByAcademicYear: Record<number, string> = {
+  2015: "1st",
+  2016: "2nd",
+  2017: "3rd",
+  2018: "4th",
+};
+
+const sortByAcademicTerm = (a: ManagementCourse, b: ManagementCourse) => {
+  if (a.year !== b.year) {
+    return a.year - b.year;
+  }
+
+  return a.term - b.term;
+};
+
+const groupedCourses = managementCurriculumCourses
+  .slice()
+  .sort(sortByAcademicTerm)
+  .reduce<Record<string, ManagementCourse[]>>((groups, course) => {
+    const key = `${course.year}-${course.term}`;
+
+    if (!groups[key]) {
+      groups[key] = [];
+    }
+
+    groups[key].push(course);
+    return groups;
+  }, {});
+
+const termKeys = Object.keys(groupedCourses).sort((a, b) => {
+  const [yearA, termA] = a.split("-").map(Number);
+  const [yearB, termB] = b.split("-").map(Number);
+
+  if (yearA !== yearB) {
+    return yearA - yearB;
+  }
+
+  return termA - termB;
+});
+
+export const mockCourseRegistrations = managementCurriculumCourses
+  .slice()
+  .sort(sortByAcademicTerm)
+  .map((course, index) => ({
+    sNo: index + 1,
+    id: STUDENT_PROFILE.id,
+    name: STUDENT_PROFILE.fullName,
+    department: STUDENT_PROFILE.department,
+    program: "Undergraduate (Degree)",
+    programType: "Regular",
+    year: studentYearLabelByAcademicYear[course.year],
+    academicYear: String(course.year),
+    semester: String(course.term),
+    course: `${course.courseCode}-${course.courseName}`,
+    paymentSlip: "Payment Invoice",
+  }));
 
 export const mockPayments = [
   {
     sNo: "+ 1",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2015/1",
     refPattern: "PAY-2015-1",
     receiptNumber: "000000600001",
@@ -161,7 +108,7 @@ export const mockPayments = [
   },
   {
     sNo: "+ 2",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2015/2",
     refPattern: "PAY-2015-2",
     receiptNumber: "000000600002",
@@ -175,7 +122,7 @@ export const mockPayments = [
   },
   {
     sNo: "+ 3",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2015/3",
     refPattern: "PAY-2015-3",
     receiptNumber: "000000600003",
@@ -189,7 +136,7 @@ export const mockPayments = [
   },
   {
     sNo: "+ 4",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2016/1",
     refPattern: "PAY-2016-1",
     receiptNumber: "000000600004",
@@ -203,7 +150,7 @@ export const mockPayments = [
   },
   {
     sNo: "+ 5",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2016/2",
     refPattern: "PAY-2016-2",
     receiptNumber: "000000600005",
@@ -217,7 +164,7 @@ export const mockPayments = [
   },
   {
     sNo: "+ 6",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2016/3",
     refPattern: "PAY-2016-3",
     receiptNumber: "000000600006",
@@ -231,7 +178,7 @@ export const mockPayments = [
   },
   {
     sNo: "+ 7",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2017/1",
     refPattern: "PAY-2017-1",
     receiptNumber: "000000600007",
@@ -245,7 +192,7 @@ export const mockPayments = [
   },
   {
     sNo: "+ 8",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2017/2",
     refPattern: "PAY-2017-2",
     receiptNumber: "000000600008",
@@ -259,7 +206,7 @@ export const mockPayments = [
   },
   {
     sNo: "+ 9",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2017/3",
     refPattern: "PAY-2017-3",
     receiptNumber: "000000600009",
@@ -273,7 +220,7 @@ export const mockPayments = [
   },
   {
     sNo: "+ 10",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2017/4",
     refPattern: "PAY-2017-4",
     receiptNumber: "000000600010",
@@ -287,7 +234,7 @@ export const mockPayments = [
   },
   {
     sNo: "+ 11",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2018/1",
     refPattern: "PAY-2018-1",
     receiptNumber: "000000600011",
@@ -301,7 +248,7 @@ export const mockPayments = [
   },
   {
     sNo: "+ 12",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2018/2",
     refPattern: "PAY-2018-2",
     receiptNumber: "000000600012",
@@ -315,7 +262,7 @@ export const mockPayments = [
   },
   {
     sNo: "+ 13",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2018/3",
     refPattern: "PAY-2018-SR",
     receiptNumber: "Pending",
@@ -329,7 +276,7 @@ export const mockPayments = [
   },
   {
     sNo: "+ 14",
-    student: "Biruk Kahsay Tesfay",
+    student: "Natnael Tesfaye Ahmed",
     academicYear: "2018/4",
     refPattern: "PAY-2018-4",
     receiptNumber: "Pending",
@@ -343,157 +290,157 @@ export const mockPayments = [
   },
 ];
 
-export const mockGradeReports = [
-  {
-    filters: {
-      academicYear: "2018",
-      semester: "1",
-    },
-    student: {
-      fullName: "Biruk Kahsay Tesfay",
-      id: "UUR00884/16",
-      program: "Undergraduate (Degree)",
-      programType: "Regular",
-      schoolCenter: "Engineering, Technology and Computational Sciences",
-      department: "Architecture and Urban Planning",
-      section: "UG3 2016 AR 2 R",
-      yearLevel: "3rd",
-    },
-    courses: [
-      {
-        courseCode: "Arch-3242",
-        courseTitle: "Theory and Design of Structures III",
-        creditHour: 3,
-        grade: "C+",
-        gradePoint: 7.5,
-      },
-      {
-        courseCode: "GlTr-1012",
-        courseTitle: "Global Trends",
-        creditHour: 2,
-        grade: "C+",
-        gradePoint: 5,
-      },
-      {
-        courseCode: "Arch-3081",
-        courseTitle: "Building Materials and Construction III",
-        creditHour: 3,
-        grade: "A-",
-        gradePoint: 11.25,
-      },
-      {
-        courseCode: "Arch-3201",
-        courseTitle: "Communication Skills III",
-        creditHour: 3,
-        grade: "A",
-        gradePoint: 12,
-      },
-      {
-        courseCode: "Arch-3111",
-        courseTitle: "History of Ethiopian Architecture",
-        creditHour: 2,
-        grade: "A",
-        gradePoint: 8,
-      },
-      {
-        courseCode: "Arch-3021",
-        courseTitle: "Architectural Design I",
-        creditHour: 4,
-        grade: "B",
-        gradePoint: 12,
-      },
-      {
-        courseCode: "Arch-2132",
-        courseTitle: "Architectural Science I ( Light)",
-        creditHour: 2,
-        grade: "C+",
-        gradePoint: 5,
-      },
-    ],
-  },
-  {
-    filters: {
-      academicYear: "2018",
-      semester: "2",
-    },
-    student: {
-      fullName: "Biruk Kahsay Tesfay",
-      id: "UUR00884/16",
-      program: "Undergraduate (Degree)",
-      programType: "Regular",
-      schoolCenter: "Engineering, Technology and Computational Sciences",
-      department: "Architecture and Urban Planning",
-      section: "UG3 2016 AR 2 R",
-      yearLevel: "3rd",
-    },
-    courses: [
-      {
-        courseCode: "Arch-3301",
-        courseTitle: "Architectural Technology",
-        creditHour: 3,
-        grade: "B+",
-        gradePoint: 10.5,
-      },
-      {
-        courseCode: "Arch-3312",
-        courseTitle: "Urban Design Studio",
-        creditHour: 4,
-        grade: "A-",
-        gradePoint: 15,
-      },
-      {
-        courseCode: "Arch-3401",
-        courseTitle: "Building Services",
-        creditHour: 3,
-        grade: "B",
-        gradePoint: 9,
-      },
-    ],
-  },
-  {
-    filters: {
-      academicYear: "2017",
-      semester: "2",
-    },
-    student: {
-      fullName: "Biruk Kahsay Tesfay",
-      id: "UUR00884/16",
-      program: "Undergraduate (Degree)",
-      programType: "Regular",
-      schoolCenter: "Engineering, Technology and Computational Sciences",
-      department: "Architecture and Urban Planning",
-      section: "UG2 2016 AR 2 R",
-      yearLevel: "2nd",
-    },
-    courses: [
-      {
-        courseCode: "Arch-2101",
-        courseTitle: "Architectural Graphics",
-        creditHour: 3,
-        grade: "B",
-        gradePoint: 9,
-      },
-      {
-        courseCode: "Arch-2203",
-        courseTitle: "Computer Aided Design",
-        creditHour: 3,
-        grade: "B+",
-        gradePoint: 10.5,
-      },
-      {
-        courseCode: "Math-2102",
-        courseTitle: "Applied Mathematics II",
-        creditHour: 2,
-        grade: "C",
-        gradePoint: 4,
-      },
-    ],
-  },
-];
+export const mockGradeReports = termKeys
+  .map((termKey) => {
+    const [academicYear, semester] = termKey.split("-");
+    const isPendingTerm =
+      academicYear === "2018" && (semester === "2" || semester === "3");
+    const courses = groupedCourses[termKey].map((course, index) => {
+      const grade: GradeValue = isPendingTerm
+        ? "-"
+        : gradePattern[(course.sNo + index) % gradePattern.length];
+      const pointValue =
+        grade === "-" ? 0 : gradePointsByLetter[grade] * course.creditHour;
 
-export const mockGradeReport = mockGradeReports[0];
+      return {
+        courseCode: course.courseCode,
+        courseTitle: course.courseName,
+        creditHour: course.creditHour,
+        grade,
+        gradePoint: Number(pointValue.toFixed(2)),
+      };
+    });
 
-export const mockAcademicYears = ["2018", "2017", "2016"];
+    const totalCredit = courses.reduce(
+      (sum, course) => sum + course.creditHour,
+      0,
+    );
+    const totalPoint = courses.reduce(
+      (sum, course) => sum + course.gradePoint,
+      0,
+    );
+
+    return {
+      filters: {
+        academicYear,
+        semester,
+      },
+      student: {
+        fullName: STUDENT_PROFILE.fullName,
+        id: STUDENT_PROFILE.id,
+        program: STUDENT_PROFILE.program,
+        programType: STUDENT_PROFILE.programType,
+        schoolCenter: STUDENT_PROFILE.schoolCenter,
+        department: STUDENT_PROFILE.department,
+        section: `DE MGMT ${Math.max(1, Number(academicYear) - 2014)}`,
+        yearLevel:
+          ordinalByLevel[Math.max(0, Math.min(3, Number(academicYear) - 2015))],
+      },
+      courses,
+      totalCredit,
+      totalPoint,
+      pending: isPendingTerm,
+    };
+  })
+  .reduce<
+    Array<{
+      filters: { academicYear: string; semester: string };
+      student: {
+        fullName: string;
+        id: string;
+        program: string;
+        programType: string;
+        schoolCenter: string;
+        department: string;
+        section: string;
+        yearLevel: string;
+      };
+      courses: Array<{
+        courseCode: string;
+        courseTitle: string;
+        creditHour: number;
+        grade: GradeValue;
+        gradePoint: number;
+      }>;
+      pending: boolean;
+      previousCreditHour: number;
+      previousGradePoint: number;
+      previousSgpa: number;
+      cumulativeGpa: number;
+      cumulativeCreditHour: number;
+      cumulativeGradePoint: number;
+      academicStatus: string;
+    }>
+  >((reports, entry) => {
+    const previous = reports[reports.length - 1];
+    const previousCreditHour = previous ? previous.cumulativeCreditHour : 0;
+    const previousGradePoint = previous ? previous.cumulativeGradePoint : 0;
+    const previousSgpa =
+      previousCreditHour === 0
+        ? 0
+        : Number((previousGradePoint / previousCreditHour).toFixed(2));
+
+    const cumulativeCreditHour = entry.pending
+      ? previousCreditHour
+      : previousCreditHour + entry.totalCredit;
+    const cumulativeGradePoint = entry.pending
+      ? previousGradePoint
+      : Number((previousGradePoint + entry.totalPoint).toFixed(2));
+    const cumulativeGpa = Number(
+      (cumulativeGradePoint / Math.max(1, cumulativeCreditHour)).toFixed(2),
+    );
+
+    reports.push({
+      filters: entry.filters,
+      student: entry.student,
+      courses: entry.courses,
+      pending: entry.pending,
+      previousCreditHour,
+      previousGradePoint,
+      previousSgpa,
+      cumulativeGpa,
+      cumulativeCreditHour,
+      cumulativeGradePoint,
+      academicStatus:
+        (entry.pending && previous?.academicStatus) ||
+        (cumulativeGpa >= 2 ? "Good Standing" : "Probation"),
+    });
+
+    return reports;
+  }, [])
+  .map((report) => {
+    if (
+      report.filters.academicYear === "2018" &&
+      report.filters.semester === "1"
+    ) {
+      return {
+        ...report,
+        cumulativeGpa: 3.2,
+        cumulativeGradePoint: Number(
+          (report.cumulativeCreditHour * 3.2).toFixed(2),
+        ),
+      };
+    }
+
+    return report;
+  })
+  .sort((a, b) => {
+    const yearDiff =
+      Number(b.filters.academicYear) - Number(a.filters.academicYear);
+    if (yearDiff !== 0) {
+      return yearDiff;
+    }
+
+    return Number(b.filters.semester) - Number(a.filters.semester);
+  });
+
+export const mockGradeReport =
+  mockGradeReports.find(
+    (report) =>
+      report.filters.academicYear === "2018" && report.filters.semester === "3",
+  ) ?? mockGradeReports[0];
+
+export const mockAcademicYears = ["2018", "2017", "2016", "2015"];
 export const mockSemesters = ["1", "2", "3"];
 
 export const mockDepartmentTransferOptions = {
@@ -525,7 +472,7 @@ export const mockDepartmentTransfers = [
     id: "1900",
     transferToDepartment:
       "Architecture and Urban Planning (Al-Amoudi-Gerji Campus)",
-    fullName: "Biruk Kahsay Tesfay",
+    fullName: "Natnael Tesfaye Ahmed",
     requestDate: "2024-09-28",
     senderDepartmentApproval: "Accepted",
     senderCollegeApproval: "Accepted",
@@ -541,7 +488,7 @@ export const mockDepartmentTransfers = [
 export const mockAdmittedStudentsDetailed = [
   {
     sNo: 1,
-    fullName: "Biruk Kahsay Tesfay",
+    fullName: "Natnael Tesfaye Ahmed",
     gender: "Male",
     studentNumber: "UUR00884/16",
     admissionYear: "Sep 01, 2016",
@@ -559,3 +506,14 @@ export const mockSisManuals: Array<{
   version: string;
   manual: string;
 }> = [];
+
+export const mockManagementCurriculumCourses = managementCurriculumCourses.map(
+  (course) => ({
+    sNo: course.sNo,
+    yearTerm: `Year ${course.year - 2014} - Semester ${course.term}`,
+    courseName: course.courseName,
+    courseCode: course.courseCode,
+    creditHour: course.creditHour,
+    prerequisite: course.prerequisite,
+  }),
+);
