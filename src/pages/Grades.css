@@ -1,0 +1,108 @@
+.grades-page {
+  padding: 14px 16px 18px;
+}
+
+.grades-title {
+  color: #8a97ad;
+  font-size: 35px;
+  margin-bottom: 4px;
+}
+
+.grades-subtitle {
+  color: #8a97ad;
+  margin-bottom: 14px;
+  font-size: 16px;
+}
+
+.grade-filter-bar {
+  display: grid;
+  grid-template-columns: auto 120px auto 80px;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #e2e2e2;
+  padding: 8px;
+}
+
+.grade-filter-label {
+  font-weight: 700;
+}
+
+.grade-filter-bar select {
+  height: 32px;
+  border: 1px solid #d5d5d5;
+}
+
+.grade-btn-row {
+  border: 1px solid #e2e2e2;
+  border-top: none;
+  padding: 8px;
+}
+
+.grade-empty-state {
+  margin-top: 12px;
+  border: 1px solid #d8e4f6;
+  background: #f1f6ff;
+  color: #5d6d86;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.grade-report-btn {
+  background: #2b3084;
+  color: #fff;
+  border: none;
+  height: 32px;
+  padding: 0 18px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.student-meta-table,
+.grade-result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.student-meta-table td,
+.grade-result-table th,
+.grade-result-table td {
+  border: 1px solid #dbdbdb;
+  padding: 6px;
+  font-size: 14px;
+}
+
+.grade-result-table th {
+  text-align: left;
+}
+
+.result-total-row td {
+  font-weight: 700;
+}
+
+.grade-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.grade-summary-grid table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.grade-summary-grid td {
+  border: 1px solid #dcdcdc;
+  padding: 4px 6px;
+}
+
+@media (max-width: 900px) {
+  .grade-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grade-filter-bar {
+    grid-template-columns: 1fr;
+  }
+}

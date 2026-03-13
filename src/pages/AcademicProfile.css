@@ -1,0 +1,148 @@
+/* Academic Profile Page Styles */
+.academic-profile .multi-tabs {
+  gap: 2px;
+  padding: 0 10px;
+}
+
+.academic-profile .tab-btn {
+  padding: 12px 15px;
+  font-size: 0.8rem;
+  border: 1px solid transparent;
+  border-bottom: none;
+  background-color: #f8f9fa;
+  margin-top: 5px;
+}
+
+.academic-profile .tab-btn.active {
+  background-color: white;
+  border-color: #dee2e6;
+  border-top: 2px solid #0d6efd;
+}
+
+.academic-layout.two-col-layout {
+  gap: 30px;
+}
+
+.info-table {
+  border: 1px solid #dee2e6;
+  border-radius: 2px;
+}
+
+.info-row {
+  display: flex;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row.alternate {
+  background-color: #f9f9f9;
+}
+
+.info-label {
+  flex: 0 0 160px;
+  color: #555;
+}
+
+.info-value {
+  flex: 1;
+  color: #333;
+}
+
+.special-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.change-link {
+  font-size: 0.8rem;
+  color: #009688; /* Teal color from screenshot */
+  text-decoration: none;
+}
+
+.change-link:hover {
+  text-decoration: underline;
+}
+
+.ml-2 {
+  margin-left: 10px;
+}
+
+.sections-table {
+  width: 100%;
+}
+
+.sections-table td {
+  padding: 10px 15px;
+  font-size: 0.85rem;
+  border: 1px solid #dee2e6;
+}
+
+.sections-table tr.alternate td {
+  background-color: #f9f9f9;
+}
+
+/* Right Side Styles */
+.clear-bg {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.photo-container {
+  border: 1px solid #dee2e6;
+  padding: 5px;
+  width: 140px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.student-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.document-link {
+  font-size: 0.85rem;
+  color: #0d6efd;
+}
+
+.info-table-contained {
+  border: 1px solid #dee2e6;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bg-gray {
+  background-color: #f8f9fa;
+  margin-bottom: 0;
+  padding: 10px 15px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.contained-rows .info-row {
+  display: block; /* Stack inline for these sections as seen in screenshot */
+  padding: 8px 15px;
+}
+
+.text-sm {
+  font-size: 0.8rem;
+  color: #444;
+}
+
+.info-action-box {
+  padding: 10px 15px;
+  text-align: center;
+  border-top: 1px solid #dee2e6;
+}
+
+.info-action-box a {
+  font-size: 0.85rem;
+  color: #0d6efd;
+}

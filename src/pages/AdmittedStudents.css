@@ -1,0 +1,50 @@
+.admitted-page {
+  padding: 12px 14px 20px;
+}
+
+.admitted-title {
+  color: #8d9cb2;
+  font-size: 20px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 10px;
+}
+
+.print-tools {
+  display: flex;
+  gap: 16px;
+  color: #8d9cb2;
+  margin-bottom: 10px;
+}
+
+.admitted-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admitted-table th,
+.admitted-table td {
+  border: 1px solid #d6d6d6;
+  padding: 8px;
+  font-size: 15px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.admitted-table th {
+  color: #007cbb;
+  font-weight: 700;
+  background: #fff;
+}
+
+.admitted-page-info {
+  color: #98a2b1;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.admitted-page-nav {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 700;
+}

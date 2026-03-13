@@ -1,0 +1,95 @@
+/* Admission Search Styles */
+.search-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title-card {
+  padding: 15px 20px;
+  margin-bottom: 0;
+}
+
+.title-card h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.table-card {
+  padding: 20px;
+  background-color: white;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 5px;
+}
+
+.admissions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 5px;
+  border: 1px solid #dee2e6;
+}
+
+.admissions-table th, 
+.admissions-table td {
+  border: 1px solid #dee2e6;
+  padding: 10px 15px;
+  font-size: 0.85rem;
+}
+
+.admissions-table th {
+  color: #008b8b; /* Teal color matching screenshot */
+  font-weight: 600;
+  text-align: left;
+  background-color: white;
+}
+
+.admissions-table th.text-center, 
+.admissions-table td.text-center {
+  text-align: center;
+}
+
+.admissions-table td {
+  color: #444;
+}
+
+.admissions-table td.text-teal {
+  color: #008b8b;
+}
+
+.bg-light {
+  background-color: #f9f9f9;
+}
+
+.empty-row-box {
+  height: 25px;
+  border: 1px solid #dee2e6;
+  background-color: #fcfcfc;
+  margin-bottom: 15px;
+}
+
+.pagination-info {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.page-link {
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.page-link:hover {
+  color: #0d6efd;
+}

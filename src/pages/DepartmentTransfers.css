@@ -1,0 +1,74 @@
+.department-transfers-page {
+  padding: 0;
+  overflow-x: auto;
+}
+
+.department-transfers-body {
+  padding: 16px;
+}
+
+.department-transfers-smallheading {
+  color: #6f7f9b;
+  font-size: 27px;
+  font-weight: 300;
+  margin-bottom: 18px;
+}
+
+.department-transfers-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+}
+
+.department-transfers-table th,
+.department-transfers-table td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  font-size: 13px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.department-transfers-table th {
+  color: #0077ad;
+  background: #fff;
+  font-weight: 600;
+}
+
+.department-transfers-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.department-transfers-action {
+  background: none;
+  border: none;
+  color: #2a7db6;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0;
+}
+
+.department-transfers-action:hover {
+  text-decoration: underline;
+}
+
+.department-transfers-page-meta {
+  color: #666;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.department-transfers-pagination {
+  align-items: center;
+  color: #666;
+  display: flex;
+  font-size: 12px;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .department-transfers-smallheading {
+    font-size: 22px;
+  }
+}

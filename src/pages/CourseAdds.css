@@ -1,0 +1,33 @@
+/* Course Adds Styles */
+.course-adds-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.alert-message {
+  display: flex;
+  align-items: center;
+  background-color: #d9edf7;
+  color: #31708f;
+  border: 1px solid #bce8f1;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.alert-icon-wrapper {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-content-block {
+  background-color: white;
+  height: 30px;
+  width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}

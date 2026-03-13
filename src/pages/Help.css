@@ -1,0 +1,47 @@
+.help-page {
+  padding: 12px 14px 20px;
+}
+
+.help-head {
+  color: #8e9db3;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 2px 0 10px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 14px;
+}
+
+.help-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.help-table th,
+.help-table td {
+  border-bottom: 1px solid #dfdfdf;
+  padding: 8px 8px;
+  font-size: 16px;
+}
+
+.help-table th {
+  color: #007cbb;
+  text-align: left;
+  font-weight: 700;
+}
+
+.help-table th.actions-col {
+  text-align: right;
+}
+
+.help-pagination-info {
+  color: #9aa3b2;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.help-pagination {
+  text-align: center;
+  margin-top: 22px;
+  font-weight: 600;
+  font-size: 17px;
+}

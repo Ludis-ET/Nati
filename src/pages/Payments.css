@@ -1,0 +1,118 @@
+/* Payments Styles */
+.payments-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-card {
+  padding: 15px 20px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.title-card h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+.table-card {
+  padding: 20px;
+}
+
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payments-table th, 
+.payments-table td {
+  padding: 8px 10px;
+  border: 1px solid #dee2e6;
+  font-size: 0.8rem;
+  vertical-align: middle;
+}
+
+.payments-table th {
+  background-color: white;
+  color: #1a73e8; /* Default header blue/gray tone */
+  font-weight: 600;
+  text-align: left;
+}
+
+.payments-table td.text-teal {
+  color: #008b8b;
+  cursor: pointer;
+}
+
+.payments-table td.text-teal:hover {
+  text-decoration: underline;
+}
+
+.payments-table td.text-gray {
+  color: #777;
+}
+
+.payments-table tr.pending-payment-row td {
+  color: #2b6fe8;
+  font-weight: 600;
+}
+
+.payments-table tr.pending-payment-row td.text-gray {
+  color: #2b6fe8;
+}
+
+/* Summary Block Enhancements */
+.summary-row td {
+  border-top: 1px solid #dee2e6;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  padding: 5px 10px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.fw-bold {
+  font-weight: 600;
+}
+
+/* Colors matching screenshot legend */
+.text-success {
+  color: #28a745;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.text-primary {
+  color: #007bff;
+}
+
+.text-warning {
+  color: #ffc107;
+}
+
+.payment-legend {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  padding-left: 10px;
+  line-height: 1.6;
+}
+
+.pagination-info {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.payment-pagination {
+  margin-top: 10px;
+}
+
+.page-link.text-gray {
+  color: #999;
+}
