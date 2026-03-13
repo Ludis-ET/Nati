@@ -23,7 +23,7 @@ import { useAuth } from "../context/AuthContext";
 import "./Login.css";
 
 const Login = () => {
-  const [username, setUsername] = useState("UUR00884/16");
+  const [username, setUsername] = useState("UU93012R/15");
   const [password, setPassword] = useState("Natiuu7676");
   const [activeSlide, setActiveSlide] = useState(0);
   const [showInvalid, setShowInvalid] = useState(false);

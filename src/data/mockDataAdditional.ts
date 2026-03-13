@@ -8,7 +8,7 @@ type GradeValue = GradeLetter | "-";
 
 const STUDENT_PROFILE = {
   fullName: "Natnael Tesfaye Ahmed",
-  id: "UUR00884/16",
+  id: "UU93012R/15",
   department: "Management",
   program: "Undergraduate (Degree)",
   programType: "Distance",
@@ -490,7 +490,7 @@ export const mockAdmittedStudentsDetailed = [
     sNo: 1,
     fullName: "Natnael Tesfaye Ahmed",
     gender: "Male",
-    studentNumber: "UUR00884/16",
+    studentNumber: "UU93012R/15",
     admissionYear: "Sep 01, 2016",
     program: "Undergraduate (Degree)",
     programType: "Regular",

@@ -1,5 +1,5 @@
 export const mockUser = {
-  id: "UUR00884/16",
+  id: "UU93012R/15",
   firstNameEng: "Natnael",
   middleNameEng: "Tesfaye",
   lastNameEng: "Ahmed",
@@ -21,7 +21,7 @@ export const mockUser = {
   lastLogin: "1 minute ago",
   lastPasswordChange: "1 month ago",
   folderNumber: "00108",
-  username: "UUR00884/16",
+  username: "UU93012R/15",
   password: "Natiuu7676", // For mock login purposes
 };
 
@@ -44,7 +44,7 @@ export const mockAdmittedStudents = [
     no: 1,
     fullName: "Natnael Tesfaye Ahmed",
     sex: "Male",
-    studentNumber: "UUR00884/16",
+    studentNumber: "UU93012R/15",
     college: "FETCS",
     department: "Architecture and Urban Planning",
     programType: "Regular",
