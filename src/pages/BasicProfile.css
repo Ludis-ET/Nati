@@ -244,3 +244,44 @@
 .btn-primary:hover {
   background-color: #1e2266;
 }
+
+@media (max-width: 900px) {
+  .tab-content {
+    padding: 18px;
+  }
+
+  .two-col-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .profile-tabs {
+    padding: 0 10px;
+  }
+
+  .tab-btn {
+    padding: 12px 14px;
+    font-size: 0.8rem;
+  }
+
+  .form-actions {
+    padding: 16px 18px 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .select-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .file-input-wrapper {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .picture-placeholder {
+    width: 120px;
+    height: 150px;
+  }
+}

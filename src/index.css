@@ -302,6 +302,7 @@ ul {
   flex-grow: 1;
   padding: 16px;
   overflow-y: auto;
+  overflow-x: auto;
   background-color: var(--body-bg);
 }
 
@@ -366,6 +367,67 @@ ul {
 }
 
 @media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .app-container {
+    min-height: 100dvh;
+    height: auto;
+    overflow-x: auto;
+  }
+
+  .main-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .main-content {
+    padding: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .card {
+    min-width: 0;
+  }
+
+  .main-header {
+    padding-right: 10px;
+  }
+
+  .header-right {
+    gap: 12px;
+  }
+
+  .user-id {
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .profile-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  .styled-table,
+  .registration-table,
+  .department-transfers-table {
+    min-width: 720px;
+  }
+
   .sidebar {
     position: fixed;
     top: 0;

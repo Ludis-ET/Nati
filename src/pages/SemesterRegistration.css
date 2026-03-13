@@ -61,6 +61,12 @@
   box-shadow: none;
 }
 
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
 .registration-table {
   width: 100%;
   border-collapse: collapse;
@@ -106,5 +112,9 @@
 @media (max-width: 768px) {
   .search-form-row {
     flex-direction: column;
+  }
+
+  .registration-table {
+    min-width: 780px;
   }
 }

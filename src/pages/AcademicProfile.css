@@ -146,3 +146,31 @@
   font-size: 0.85rem;
   color: #0d6efd;
 }
+
+@media (max-width: 900px) {
+  .academic-layout.two-col-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .academic-profile .tab-btn {
+    font-size: 0.78rem;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .info-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .info-label {
+    flex: 0 0 auto;
+  }
+
+  .photo-container {
+    width: 120px;
+  }
+}
