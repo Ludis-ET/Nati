@@ -11,7 +11,7 @@ const STUDENT_PROFILE = {
   id: "UU93012R/15",
   department: "Management",
   program: "Undergraduate (Degree)",
-  programType: "Distance",
+  programType: "Regular",
   schoolCenter: "Faculty of Distance Education",
 };
 

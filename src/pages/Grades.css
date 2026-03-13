@@ -1,5 +1,6 @@
 .grades-page {
   padding: 14px 16px 18px;
+  overflow-x: hidden;
 }
 
 .grades-title {
@@ -64,6 +65,20 @@
   margin-top: 8px;
 }
 
+.grade-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.student-meta-table {
+  min-width: 720px;
+}
+
+.grade-result-table {
+  min-width: 760px;
+}
+
 .student-meta-table td,
 .grade-result-table th,
 .grade-result-table td {
@@ -104,5 +119,14 @@
 
   .grade-filter-bar {
     grid-template-columns: 1fr;
+  }
+
+  .grades-title {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .grades-subtitle {
+    font-size: 14px;
   }
 }

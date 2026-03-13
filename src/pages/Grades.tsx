@@ -108,91 +108,97 @@ const Grades = () => {
             </div>
           ) : (
             <>
-              <table className="student-meta-table">
-                <tbody>
-                  <tr>
-                    <td>
-                      <strong>Fullname:</strong>
-                    </td>
-                    <td>{selectedReport.student.fullName}</td>
-                    <td>
-                      <strong>ID:</strong>
-                    </td>
-                    <td>{selectedReport.student.id}</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>Program:</strong>
-                    </td>
-                    <td>{selectedReport.student.program}</td>
-                    <td>
-                      <strong>Program Type:</strong>
-                    </td>
-                    <td>{selectedReport.student.programType}</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>School/Center:</strong>
-                    </td>
-                    <td>{selectedReport.student.schoolCenter}</td>
-                    <td>
-                      <strong>Department:</strong>
-                    </td>
-                    <td>{selectedReport.student.department}</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>Section:</strong>
-                    </td>
-                    <td>{selectedReport.student.section}</td>
-                    <td>
-                      <strong>Year Level:</strong>
-                    </td>
-                    <td>{selectedReport.student.yearLevel}</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>Academic Year:</strong>
-                    </td>
-                    <td>{selectedReport.filters.academicYear}</td>
-                    <td>
-                      <strong>Semester:</strong>
-                    </td>
-                    <td>{selectedReport.filters.semester}</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <table className="grade-result-table">
-                <thead>
-                  <tr>
-                    <th>No</th>
-                    <th>Course Code</th>
-                    <th>Course Title</th>
-                    <th>Credit Hour</th>
-                    <th>Grade</th>
-                    <th>Grade Point</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {selectedReport.courses.map((course, idx) => (
-                    <tr key={course.courseCode}>
-                      <td>{idx + 1}</td>
-                      <td>{course.courseCode}</td>
-                      <td>{course.courseTitle}</td>
-                      <td>{course.creditHour}</td>
-                      <td>{course.grade}</td>
-                      <td>{course.grade === "-" ? "-" : course.gradePoint}</td>
+              <div className="grade-table-wrap">
+                <table className="student-meta-table">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <strong>Fullname:</strong>
+                      </td>
+                      <td>{selectedReport.student.fullName}</td>
+                      <td>
+                        <strong>ID:</strong>
+                      </td>
+                      <td>{selectedReport.student.id}</td>
                     </tr>
-                  ))}
-                  <tr className="result-total-row">
-                    <td colSpan={3}>TOTAL</td>
-                    <td>{totals.totalCredit}</td>
-                    <td></td>
-                    <td>{isPendingReport ? "-" : totals.totalPoint}</td>
-                  </tr>
-                </tbody>
-              </table>
+                    <tr>
+                      <td>
+                        <strong>Program:</strong>
+                      </td>
+                      <td>{selectedReport.student.program}</td>
+                      <td>
+                        <strong>Program Type:</strong>
+                      </td>
+                      <td>{selectedReport.student.programType}</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>School/Center:</strong>
+                      </td>
+                      <td>{selectedReport.student.schoolCenter}</td>
+                      <td>
+                        <strong>Department:</strong>
+                      </td>
+                      <td>{selectedReport.student.department}</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Section:</strong>
+                      </td>
+                      <td>{selectedReport.student.section}</td>
+                      <td>
+                        <strong>Year Level:</strong>
+                      </td>
+                      <td>{selectedReport.student.yearLevel}</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Academic Year:</strong>
+                      </td>
+                      <td>{selectedReport.filters.academicYear}</td>
+                      <td>
+                        <strong>Semester:</strong>
+                      </td>
+                      <td>{selectedReport.filters.semester}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="grade-table-wrap">
+                <table className="grade-result-table">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Course Code</th>
+                      <th>Course Title</th>
+                      <th>Credit Hour</th>
+                      <th>Grade</th>
+                      <th>Grade Point</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {selectedReport.courses.map((course, idx) => (
+                      <tr key={course.courseCode}>
+                        <td>{idx + 1}</td>
+                        <td>{course.courseCode}</td>
+                        <td>{course.courseTitle}</td>
+                        <td>{course.creditHour}</td>
+                        <td>{course.grade}</td>
+                        <td>
+                          {course.grade === "-" ? "-" : course.gradePoint}
+                        </td>
+                      </tr>
+                    ))}
+                    <tr className="result-total-row">
+                      <td colSpan={3}>TOTAL</td>
+                      <td>{totals.totalCredit}</td>
+                      <td></td>
+                      <td>{isPendingReport ? "-" : totals.totalPoint}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
               <div className="grade-summary-grid">
                 <table>
