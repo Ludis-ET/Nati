@@ -10790,7 +10790,7 @@ function fm(e, t) {
     program: "Undergraduate (Degree)",
     programType: "Regular",
     campus: "Al-Amoudi-Gerji Campus",
-    faculty: "Engineering, Technology and Computational Sciences",
+    faculty: "Business and Management",
     department: "Management",
     admissionYear: "2016",
     admissionDate: "Sep 1, 2016",
@@ -13737,7 +13737,7 @@ function fm(e, t) {
       admissionYear: "Sep 01, 2016",
       program: "Undergraduate (Degree)",
       programType: "Regular",
-      college: "Engineering, Technology and Computational Sciences",
+      college: "Business and Management",
       department: "Management",
     },
   ],
@@ -14749,8 +14749,7 @@ const Go = () =>
                           children: l.jsx("strong", { children: "College:" }),
                         }),
                         l.jsx("td", {
-                          children:
-                            "Engineering, Technology and Computational Sciences",
+                          children: "Business and Management",
                         }),
                       ],
                     }),

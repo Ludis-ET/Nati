@@ -493,7 +493,7 @@ export const mockAdmittedStudentsDetailed = [
     admissionYear: "Sep 01, 2016",
     program: "Undergraduate (Degree)",
     programType: "Regular",
-    college: "Engineering, Technology and Computational Sciences",
+    college: "Business and Management",
     department: "Management",
   },
 ];

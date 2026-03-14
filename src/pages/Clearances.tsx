@@ -39,7 +39,7 @@ const Clearances = () => {
                 <td>
                   <strong>College:</strong>
                 </td>
-                <td>Engineering, Technology and Computational Sciences</td>
+                <td>Business and Management</td>
               </tr>
               <tr>
                 <td>

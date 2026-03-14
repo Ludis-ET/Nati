@@ -13,7 +13,7 @@ export const mockUser = {
   program: "Undergraduate (Degree)",
   programType: "Regular",
   campus: "Al-Amoudi-Gerji Campus",
-  faculty: "Engineering, Technology and Computational Sciences",
+  faculty: "Business and Management",
   department: "Management",
   admissionYear: "2016",
   admissionDate: "Sep 1, 2016",
