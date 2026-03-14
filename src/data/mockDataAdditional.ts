@@ -12,7 +12,7 @@ const STUDENT_PROFILE = {
   department: "Management",
   program: "Undergraduate (Degree)",
   programType: "Regular",
-  schoolCenter: "Faculty of Distance Education",
+  schoolCenter: "Regular",
 };
 
 const gradePointsByLetter: Record<GradeLetter, number> = {
@@ -452,16 +452,16 @@ export const mockDepartmentTransferOptions = {
     {
       id: "2",
       campusId: "3",
-      name: "Engineering, Technology and Computational Sciences",
+      name: "Business and Management",
     },
     {
       id: "5",
       campusId: "1",
-      name: "Business and Economics",
+      name: "Business and Management",
     },
   ],
   departments: [
-    { id: "6", collegeId: "2", name: "Architecture and Urban Planning" },
+    { id: "6", collegeId: "2", name: "Management" },
     { id: "8", collegeId: "2", name: "Software Engineering" },
     { id: "14", collegeId: "5", name: "Accounting and Finance" },
   ],
@@ -470,8 +470,7 @@ export const mockDepartmentTransferOptions = {
 export const mockDepartmentTransfers = [
   {
     id: "1900",
-    transferToDepartment:
-      "Architecture and Urban Planning (Al-Amoudi-Gerji Campus)",
+    transferToDepartment: "Management (Al-Amoudi-Gerji Campus)",
     fullName: "Natnael Tesfaye Ahmed",
     requestDate: "2024-09-28",
     senderDepartmentApproval: "Accepted",
@@ -495,7 +494,7 @@ export const mockAdmittedStudentsDetailed = [
     program: "Undergraduate (Degree)",
     programType: "Regular",
     college: "Engineering, Technology and Computational Sciences",
-    department: "Architecture and Urban Planning",
+    department: "Management",
   },
 ];
 
